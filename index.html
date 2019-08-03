@@ -1,0 +1,82 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script>
+        const employees = [
+                { id: 1, name: 'moe' },
+                { id: 2, name: 'larry', managerId: 1 },
+                { id: 4, name: 'shep', managerId: 2 },
+                { id: 3, name: 'curly', managerId: 1 },
+                { id: 5, name: 'groucho', managerId: 3 },
+                { id: 6, name: 'harpo', managerId: 5 },
+                { id: 8, name: 'shep Jr.', managerId: 4 },
+                { id: 99, name: 'lucy', managerId: 1 }
+            ];
+
+            const spacer = (text) => {
+                if (!text) {
+                    return console.log('');
+                }
+                const stars = new Array(5).fill('*').join('');
+                console.log(`${stars} ${text} ${stars}`);
+            }
+
+            spacer('findEmployeeByName Moe')
+            // given a name and array of employees, return employee
+            const findEmployeeByName = (nameInput, arr) => {
+            let returnArr = arr.filter(employeeObj =>
+                employeeObj.name === nameInput
+                 )
+            return returnArr[0];
+            }
+            
+            console.log(findEmployeeByName('moe', employees));//{ id: 1, name: 'moe' }
+            spacer('')
+
+            spacer('findManagerFor Shep')
+            // given an employee and a list of employees, return the employee who is the manager
+            const findManagerfor = (_employee, _employeeList) =>  {
+                let employeeId = _employee.id;
+                let returnArr = _employeeList.filter(employeeObj => 
+
+                )
+                return returnArr[0]
+
+            }
+            
+            const findCoworkersfor = (emp, empList) => {
+                return empList.filter(current => 
+                   current.managerId === emp.managerId  && current.id !==  emp.id
+                )
+            }  
+
+            //given an employee and a list of employees, return the employees who report to the same manager
+
+
+
+            spacer('findManagementChain for moe')
+        
+            spacer('findManagementChain for shep Jr.')
+               const findManagementChain = (emp, empList) => {
+                    return empList.filter(current =>
+                        current.managerId <= emp.managerId || !current.managerId
+                    )
+                }
+
+
+            spacer('generateManagementTree')
+        const findManagementChain = (emp, empList) => {
+            return empList.filter(current =>
+                current.managerId <= emp.managerId || !current.managerId
+            )
+        }
+         
+
+            spacer('displayManagementTree')
+    
+
+        </script>
+    </body>
+</html>
